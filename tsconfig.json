@@ -4,10 +4,9 @@
     "exclude": ["node_modules/*"],
     "compilerOptions": {
       "rootDir": "src",
-      "outDir": "dist",
+      "module": "ES2015",
       "importsNotUsedAsValues": "error",
       "moduleResolution": "node",
       "target": "es2017",
-      "declaration": true
     }
   }

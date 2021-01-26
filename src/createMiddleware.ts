@@ -1,4 +1,4 @@
-import type { Middleware, Store } from "./types/main";
+import type { Middleware, Store } from "./types/svelte-store";
 
 const createMiddleware = <S, AA>(middlewareList: Middleware<S, AA>[], store: Store<S, AA>) => {
 

@@ -2,23 +2,27 @@
   "name": "svelte-store",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "dist/svelte-store.d.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf ./dist && rollup -c && tsc --emitDeclarationOnly"
+    "build": "rm -rf ./dist && rollup -c && yarn run declaration",
+    "declaration": "cp ./src/types/svelte-store.d.ts ./dist"
   },
+  "files": [
+    "dist"
+  ],
   "author": "liamgbs",
-  "license": "ISC",
-  "dependencies": {
-    "svelte": "3.0.0"
-  },
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.1.0",
     "@tsconfig/svelte": "^1.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.1.0",
-    "typescript": "3.9.3"
+    "typescript": "3.9.3",
+    "svelte": "3.0.0"
   }
 }

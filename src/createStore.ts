@@ -1,8 +1,8 @@
 import createMiddleware from "./createMiddleware";
-import type { State, Store, Middleware, IStoreConfig } from "./types/main";
+import type { State, Store, Middleware, IStoreConfig } from "./types/svelte-store";
 import dispatcher from "./dispatcher";
 
-const createStore = <S, AA>(config: IStoreConfig<S, AA>[], middleware: Middleware<S, AA>[]): Store<S, AA> => {
+const createStore = <S, AA>(config: IStoreConfig<AA>[], middleware: Middleware<S, AA>[]): Store<S, AA> => {
     let fullState: State<S>;
 
     const updateFullState = (action?: AA) => {

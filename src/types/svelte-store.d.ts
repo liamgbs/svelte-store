@@ -1,8 +1,9 @@
+
 import type { Writable } from "svelte/store";
 
-export interface IStoreConfig<S, AA> {
+export interface IStoreConfig<AA> {
     name: string,
-    store: Writable<S>,
+    store: Writable<any>,
     reducer: Reducer<any, AA>,
 }
 
@@ -19,4 +20,8 @@ export type Store<S, AA> = {
     getState(): State<S>;
     getWritable<T = any>(name: string): Writable<T>
     dispatch(action: AA): void;
+}
+
+declare module "svelte-store" {
+    export const createStore: <S, AA> (config: IStoreConfig<AA>[], middleware: Middleware<S, AA>[]) => Store<S, AA>
 }
