@@ -45,23 +45,12 @@ describe("createMiddleware", () => {
         expect(middlewareMock3.mock.calls.length).toEqual(1);
     });
 
-    it('Handles the correct action', async () => {
-        const middlewareMock3 = jest.fn(middleware3);
-        const applyMiddleware = createMiddleware([middlewareMock3], store);
-        const changedAction1 = await applyMiddleware({ type: "TEST_ACTION_1"});
-        expect(changedAction1.payload).toBe("TEST_PAYLOAD_1");
-        expect(changedAction1.type).toBe("TEST_ACTION_1");
-        const changedAction2 = await applyMiddleware({ type: "TEST_ACTION_2"});
-        expect(changedAction2.payload).toBeUndefined();
-        expect(changedAction2.type).toBe("TEST_ACTION_2");
-    });
-
     it('Passes middleware array immutably', async () => {
         const middlewareList = [middleware1, middleware2, middleware3];
         const applyMiddleware = createMiddleware(middlewareList, store);
         applyMiddleware({});
         expect(middlewareList).toEqual([middleware1, middleware2, middleware3]);
-    })
+    });
 })
 
 

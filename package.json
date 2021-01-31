@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "build": "rm -rf ./dist && rollup -c && yarn run declaration",
-    "declaration": "cp ./src/types/svelte-store.d.ts ./dist"
+    "declaration": "cp ./src/types/svelte-store.d.ts ./dist",
   },
   "files": [
     "dist"

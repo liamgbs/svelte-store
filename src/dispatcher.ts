@@ -17,8 +17,7 @@ const dispatcher = <AA>(dispatchFn: DispatcherFunction<AA>) => {
         if (actionQueue.length) {
             return dispatch(actionQueue.shift())
         }
-
-        return;
+        
     }
 }
 
